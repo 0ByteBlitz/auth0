@@ -3,9 +3,9 @@ import auth0 from 'auth0-js';
 class Auth{
     constructor(){
         this.auth0 = new auth0.WebAuth({
-            domain: 'mukes.auth0.com',
-            audience: 'https://mukes.auth0.com/userinfo',
-            clientID: '0Rr25reiKmCfiRA7mKSZimAxZfmsUVs8',
+            domain: '',
+            audience: '',
+            clientID: '',
             redirectUri: 'http://localhost:3000/callback',
             responseType: 'token id_token',
             scope: 'openid profile'
@@ -58,7 +58,7 @@ class Auth{
       signOut() {
           this.auth0.logout({
               returnTo: 'http://localhost:3000',
-              clientID: '0Rr25reiKmCfiRA7mKSZimAxZfmsUVs8',
+              clientID: '',
           });
       }
 
