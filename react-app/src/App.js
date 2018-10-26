@@ -16,11 +16,12 @@ class App extends Component {
      }
    }
    async componentDidMount() {
-     if (this.props.location.pathname === '/callback') return console.log('no path');
+     if (this.props.location.pathname === '/callback') {
+       this.setState({checkingSession:false});
+       return;
+     }
      try {
-       console.log('starting silentAuth');
        await auth0Client.silentAuth();
-       console.log('silentAuth done');
        this.forceUpdate();
      } catch (err) {
        if (err.error === 'login_required') return;

@@ -41,7 +41,7 @@ class Auth{
     }
 
     isAuthenticated() {
-        return new Date().getTime() < this.expireAt;
+        return new Date().getTime() < this.expiresAt;
     }
 
       setSession(authResult, step) {
